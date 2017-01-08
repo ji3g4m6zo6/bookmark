@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class GTViewController: UIViewController {
     
+    
+    @IBOutlet weak var testLabel: UILabel!
     var imageData: String = ""
     var receivedItemImageData: NSData = NSData()
     
@@ -93,7 +95,7 @@ class GTViewController: UIViewController {
 //            nsdataToJSON(data: data)
 //            self.nsdataToJSON(data: data!)
             do {
-                let a =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
+//                let a =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String:Any]
                 
                 
                 let json = JSON(data: data!)
@@ -102,6 +104,19 @@ class GTViewController: UIViewController {
                  let logoAnnotations: JSON = responses["textAnnotations"]
                 let str: String = logoAnnotations[0]["description"].stringValue
                 print(str)
+                
+                DispatchQueue.main.async {
+                   self.testLabel.text = str
+                }
+                
+
+                
+               
+                
+                let alert = UIAlertController(title: "Alert", message: str, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
                 // Get LOGO
 //                let logoAnnotations: String = responses["textAnnotations"]["description"] as! String
 //                print(logoAnnotations)

@@ -58,14 +58,7 @@ class MaskViewController: UIViewController, ImageMaskFilledDelegate{
         
         
         
-        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
-            
-            
-            
-            self.performSegue(withIdentifier: "toGoogleTest", sender: nil)
-        }
+        self.performSegue(withIdentifier: "toGoogleTest", sender: nil)
         //        self.performSegue(withIdentifier: "toGoogleTest", sender: nil)
     }
     
