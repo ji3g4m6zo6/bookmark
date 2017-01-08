@@ -109,19 +109,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-lQ-gO2">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PAn-Ub-AgR" id="RsI-eF-Mbb"/>
+                                    <outlet property="delegate" destination="PAn-Ub-AgR" id="stY-2A-LuG"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YbS-Qf-7Jt" firstAttribute="top" secondItem="XpX-zL-vNL" secondAttribute="bottom" constant="8" id="0KR-lf-d0F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9RH-A2-ZuA" secondAttribute="trailing" constant="6" id="BDC-yK-iUF"/>
+                            <constraint firstItem="gOO-lQ-gO2" firstAttribute="leading" secondItem="YCi-7a-xcR" secondAttribute="leading" id="Mwe-iU-OTg"/>
                             <constraint firstAttribute="trailing" secondItem="YbS-Qf-7Jt" secondAttribute="trailing" id="WAR-EH-ZWL"/>
                             <constraint firstItem="YbS-Qf-7Jt" firstAttribute="leading" secondItem="YCi-7a-xcR" secondAttribute="leading" id="a9W-xM-M6n"/>
                             <constraint firstItem="9RH-A2-ZuA" firstAttribute="top" secondItem="aqu-XI-egw" secondAttribute="bottom" id="c2B-Zd-x4Z"/>
                             <constraint firstItem="XpX-zL-vNL" firstAttribute="leading" secondItem="YCi-7a-xcR" secondAttribute="leadingMargin" constant="6" id="eRP-sD-QcY"/>
+                            <constraint firstAttribute="trailing" secondItem="gOO-lQ-gO2" secondAttribute="trailing" id="ms2-uo-NwO"/>
+                            <constraint firstItem="HWg-zN-g1N" firstAttribute="top" secondItem="gOO-lQ-gO2" secondAttribute="bottom" id="rOd-Yu-Ml9"/>
                             <constraint firstItem="XpX-zL-vNL" firstAttribute="top" secondItem="aqu-XI-egw" secondAttribute="bottom" id="wOr-KE-D0F"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myPicker" destination="gOO-lQ-gO2" id="tMq-f0-gLQ"/>
                         <outlet property="testLabel" destination="YbS-Qf-7Jt" id="hqa-07-gtl"/>
                     </connections>
                 </viewController>
