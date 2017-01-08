@@ -15,21 +15,20 @@ let bookDict1: [String:Any] = [ "name" : "booktitle1" , "ISBNcode" : "12345678",
 let bookDict2: [String:Any] = [ "name" : "booktitle2" , "ISBNcode" : "23456789", "pic" : "", "notesCount": 12 ]
 var allBookArray: [Any] = [bookDict1, bookDict2]
 
-class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate {
+class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate, BarcodeScannerDismissalDelegate {
 
     @IBAction func addBookButton(_ sender: UIButton) {
     
         //Camera
         //Barcode
         
-        
-        
         let controller = BarcodeScannerController()
         controller.codeDelegate = self
+//        controller.errorDelegate = self
+        controller.dismissalDelegate = self
         
-        navigationController?.pushViewController(controller, animated: true)
+        present(controller, animated: true, completion: nil)
         
-        alertForCreateAccount()
         
     }
 
@@ -69,6 +68,13 @@ class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate 
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+
+        let rowIndex = indexPath.row
+        
+        print(allBookArray[rowIndex])
+
+    }
 
        /*
     // MARK: - Navigation
@@ -82,17 +88,27 @@ class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate 
 
     func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
         print(code)
-        controller.reset()
+//        controller.reset()
+
+        controller.dismiss(animated: true, completion: nil)
+        
+        self.alertForAddingBook(ISBN: code)
+
+        
     }
     
-    func alertForCreateAccount() {
+    func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func alertForAddingBook(ISBN: String) {
         
         var booknameCreated: String = ""
-        let bookISBNCreated: String = ""
+        let bookISBNCreated: String = ISBN
         let bookImageCreated: String = ""
         
         
-        let alert = UIAlertController(title: "Add new book", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Add new book", message: bookISBNCreated, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Add", style: UIAlertActionStyle.default, handler: { action in
             
             let bookNameTextField = alert.textFields![0] as UITextField
@@ -104,12 +120,14 @@ class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate 
                 let newBookDict: [String:Any] = [
                 
                     "name" : booknameCreated,
-                    "ISBNCode" : bookISBNCreated,
+                    "ISBNcode" : bookISBNCreated,
                     "pic" : bookImageCreated,
                     "notesCount" : 0
                 ]
                 
                 allBookArray.append(newBookDict)
+                print(allBookArray)
+                self.tableView.reloadData()
                 
             } else {
                 
@@ -119,11 +137,11 @@ class BooklistViewController: UITableViewController, BarcodeScannerCodeDelegate 
             
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { action in
         }))
         
         alert.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter book name"
+            textField.placeholder = "Enter book name here"
         }
         
         self.present(alert, animated: true, completion: nil)
