@@ -13,6 +13,9 @@
 		5337AEBE1E21F57800249929 /* BookMark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5337AEBC1E21F57800249929 /* BookMark.xcdatamodeld */; };
 		5337AEC01E21F57800249929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5337AEBF1E21F57800249929 /* Assets.xcassets */; };
 		5337AEC31E21F57800249929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5337AEC11E21F57800249929 /* LaunchScreen.storyboard */; };
+		58A59086793FF58A7D812B13 /* Pods_BookMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733A8B9184917ECC9D2FA22C /* Pods_BookMark.framework */; };
+		7F74E4791E220F6700B37BF3 /* BooklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F74E4781E220F6700B37BF3 /* BooklistViewController.swift */; };
+		7F74E47B1E2215D200B37BF3 /* BooklistCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F74E47A1E2215D200B37BF3 /* BooklistCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		5337AEBF1E21F57800249929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5337AEC21E21F57800249929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5337AEC41E21F57800249929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		733A8B9184917ECC9D2FA22C /* Pods_BookMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F74E4781E220F6700B37BF3 /* BooklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooklistViewController.swift; sourceTree = "<group>"; };
+		7F74E47A1E2215D200B37BF3 /* BooklistCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooklistCustomCell.swift; sourceTree = "<group>"; };
+		EEA273F1E6630E1EDDFAA2B7 /* Pods-BookMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMark.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookMark/Pods-BookMark.release.xcconfig"; sourceTree = "<group>"; };
+		FFE186E132976FC5E5FA0FD3 /* Pods-BookMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookMark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookMark/Pods-BookMark.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A59086793FF58A7D812B13 /* Pods_BookMark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F885987280D6A3A3A3D74AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				733A8B9184917ECC9D2FA22C /* Pods_BookMark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5337AEA91E21F57800249929 = {
 			isa = PBXGroup;
 			children = (
 				5337AEB41E21F57800249929 /* BookMark */,
 				5337AEB31E21F57800249929 /* Products */,
+				FF644B6AA71BA9B1784DF15B /* Pods */,
+				1F885987280D6A3A3A3D74AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +82,19 @@
 				5337AEC11E21F57800249929 /* LaunchScreen.storyboard */,
 				5337AEC41E21F57800249929 /* Info.plist */,
 				5337AEBC1E21F57800249929 /* BookMark.xcdatamodeld */,
+				7F74E4781E220F6700B37BF3 /* BooklistViewController.swift */,
+				7F74E47A1E2215D200B37BF3 /* BooklistCustomCell.swift */,
 			);
 			path = BookMark;
+			sourceTree = "<group>";
+		};
+		FF644B6AA71BA9B1784DF15B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFE186E132976FC5E5FA0FD3 /* Pods-BookMark.debug.xcconfig */,
+				EEA273F1E6630E1EDDFAA2B7 /* Pods-BookMark.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5337AEC71E21F57800249929 /* Build configuration list for PBXNativeTarget "BookMark" */;
 			buildPhases = (
+				583E8516ABE356BD718AEEFA /* [CP] Check Pods Manifest.lock */,
 				5337AEAE1E21F57800249929 /* Sources */,
 				5337AEAF1E21F57800249929 /* Frameworks */,
 				5337AEB01E21F57800249929 /* Resources */,
+				EEBF043F4F03B9BCD07E508A /* [CP] Embed Pods Frameworks */,
+				607B1CFE439EA7FC04685F9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,6 +132,7 @@
 				TargetAttributes = {
 					5337AEB11E21F57800249929 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 4C6ZH29U7C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -134,14 +168,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		583E8516ABE356BD718AEEFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		607B1CFE439EA7FC04685F9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookMark/Pods-BookMark-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEBF043F4F03B9BCD07E508A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookMark/Pods-BookMark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5337AEAE1E21F57800249929 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5337AEB81E21F57800249929 /* ViewController.swift in Sources */,
+				7F74E4791E220F6700B37BF3 /* BooklistViewController.swift in Sources */,
 				5337AEB61E21F57800249929 /* AppDelegate.swift in Sources */,
 				5337AEBE1E21F57800249929 /* BookMark.xcdatamodeld in Sources */,
+				7F74E47B1E2215D200B37BF3 /* BooklistCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +346,10 @@
 		};
 		5337AEC81E21F57800249929 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFE186E132976FC5E5FA0FD3 /* Pods-BookMark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4C6ZH29U7C;
 				INFOPLIST_FILE = BookMark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cu.BookMark;
@@ -274,8 +360,10 @@
 		};
 		5337AEC91E21F57800249929 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEA273F1E6630E1EDDFAA2B7 /* Pods-BookMark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 4C6ZH29U7C;
 				INFOPLIST_FILE = BookMark/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cu.BookMark;
@@ -303,6 +391,7 @@
 				5337AEC91E21F57800249929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
