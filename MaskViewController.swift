@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKCamera
 //import
 
 class MaskViewController: UIViewController, ImageMaskFilledDelegate{
@@ -18,6 +19,7 @@ class MaskViewController: UIViewController, ImageMaskFilledDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         //設定圖片
 //        imageView.image = imageFile
@@ -49,6 +51,30 @@ class MaskViewController: UIViewController, ImageMaskFilledDelegate{
         }
     }
     
+    @IBAction func tack(_ sender: Any) {
+        
+        let camera = DKCamera()
+        
+        camera.didCancel = { () in
+            print("didCancel")
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        camera.didFinishCapturingImage = {(image: UIImage) in
+            print("didFinishCapturingImage")
+//            print(image)
+            self.imageView.image = image
+            
+            //            showImageSegue
+            
+//            self.imageFormCamera = image
+            
+            
+            self.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "showImageSegue", sender: nil)
+        }
+    }
     
     
     @IBAction func uploadAction(_ sender: UIButton) {

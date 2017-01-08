@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,12 +46,21 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jf-2u-Vay">
-                                <rect key="frame" x="313" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="328" y="28" width="31" height="30"/>
+                                <state key="normal" title="分析">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="uploadAction:" destination="JN8-RZ-oET" eventType="touchUpInside" id="tbg-Fo-1PV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd1-wN-5Mk">
+                                <rect key="frame" x="16" y="28" width="31" height="30"/>
+                                <state key="normal" title="拍照">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tack:" destination="JN8-RZ-oET" eventType="touchUpInside" id="MnN-Eg-8cQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -60,9 +68,11 @@
                         <constraints>
                             <constraint firstItem="vGG-yg-3c8" firstAttribute="top" secondItem="T6K-sj-wgo" secondAttribute="bottom" id="0IH-fs-wgF"/>
                             <constraint firstItem="T6K-sj-wgo" firstAttribute="top" secondItem="pqJ-uj-fYb" secondAttribute="topMargin" id="3Mr-7g-Aii"/>
+                            <constraint firstItem="qd1-wN-5Mk" firstAttribute="leading" secondItem="pqJ-uj-fYb" secondAttribute="leadingMargin" id="6e6-Kx-0No"/>
                             <constraint firstItem="vGG-yg-3c8" firstAttribute="top" secondItem="Ezq-kZ-qhD" secondAttribute="bottom" id="Q2o-vH-DXG"/>
                             <constraint firstItem="Ezq-kZ-qhD" firstAttribute="top" secondItem="pqJ-uj-fYb" secondAttribute="topMargin" id="SOI-Gu-OWB"/>
                             <constraint firstItem="Ezq-kZ-qhD" firstAttribute="leading" secondItem="pqJ-uj-fYb" secondAttribute="leadingMargin" constant="-20" id="bIF-Sy-IFK"/>
+                            <constraint firstItem="qd1-wN-5Mk" firstAttribute="top" secondItem="8Cd-J7-AGG" secondAttribute="bottom" constant="8" id="hgr-eE-LFw"/>
                             <constraint firstItem="T6K-sj-wgo" firstAttribute="leading" secondItem="pqJ-uj-fYb" secondAttribute="leadingMargin" constant="-20" id="oEA-cv-atA"/>
                             <constraint firstItem="6Jf-2u-Vay" firstAttribute="trailing" secondItem="pqJ-uj-fYb" secondAttribute="trailingMargin" id="sCd-iF-846"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T6K-sj-wgo" secondAttribute="trailing" constant="-20" id="t1O-OJ-ILR"/>
