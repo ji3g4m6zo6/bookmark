@@ -10,15 +10,19 @@ import UIKit
 //import
 
 class MaskViewController: UIViewController, ImageMaskFilledDelegate{
+    var imageFile: UIImage?;
     @IBOutlet weak var FengjieMask: ImageMaskView!
     @IBOutlet weak var uploadBtn: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        FengjieMask.radius = 20;
-        //        [FengjieMask beginInteraction];
-        //        FengjieMask.imageMaskFilledDelegate = self;
+        //設定圖片
+//        imageView.image = imageFile
+        
+        
         
         FengjieMask.radius = 20
         FengjieMask.beginInteraction()
@@ -98,15 +102,6 @@ class MaskViewController: UIViewController, ImageMaskFilledDelegate{
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

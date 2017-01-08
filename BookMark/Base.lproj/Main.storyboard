@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="121.88905547226388"/>
+            <point key="canvasLocation" x="231" y="20"/>
         </scene>
         <!--Mask View Controller-->
         <scene sceneID="hLB-fy-KNQ">
@@ -72,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="FengjieMask" destination="Ezq-kZ-qhD" id="5mu-6x-JWO"/>
+                        <outlet property="imageView" destination="T6K-sj-wgo" id="469-ET-fTo"/>
                         <outlet property="uploadBtn" destination="6Jf-2u-Vay" id="E8R-uG-GYh"/>
                         <segue destination="PAn-Ub-AgR" kind="show" identifier="toGoogleTest" id="f3d-ov-ygi"/>
                     </connections>
