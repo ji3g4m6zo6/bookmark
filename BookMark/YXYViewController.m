@@ -7,6 +7,7 @@
 //
 
 #import "YXYViewController.h"
+//#import "googletestViewController.swift"
 
 @interface YXYViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *uploadBtn;
@@ -29,6 +30,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark ImageMaskFilledDelegate
 - (void) imageMaskView:(ImageMaskView *)maskView clearPercentDidChanged:(float)clearPercent{
     if (clearPercent > 50) {
@@ -44,6 +46,8 @@
 }
 
 - (IBAction)uploadAction:(id)sender {
+    
+//    toGoogleTest
     [self.FengjieMask setAlpha:1];
     [self.uploadBtn setAlpha:0];  
     
@@ -55,6 +59,12 @@
     
     UIImage * a = [self imageWithView:self.view];
     NSLog(@"%a",a.size.height);
+    
+//    GoogletestViewController *myNewVC = [[GoogletestViewController alloc] init];
+//    
+//    // do any setup you need for myNewVC
+//    
+//    [self presentModalViewController:myNewVC animated:YES];
     
 }
 

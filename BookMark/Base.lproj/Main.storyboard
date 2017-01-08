@@ -27,10 +27,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Mask View Controller-->
         <scene sceneID="hLB-fy-KNQ">
             <objects>
-                <viewController id="JN8-RZ-oET" customClass="YXYViewController" sceneMemberID="viewController">
+                <viewController id="JN8-RZ-oET" customClass="MaskViewController" customModule="BookMark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Cd-J7-AGG"/>
                         <viewControllerLayoutGuide type="bottom" id="vGG-yg-3c8"/>
@@ -51,7 +51,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="uploadAction:" destination="JN8-RZ-oET" eventType="touchUpInside" id="ztk-rC-o5N"/>
+                                    <action selector="uploadAction:" destination="JN8-RZ-oET" eventType="touchUpInside" id="tbg-Fo-1PV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,13 +70,32 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="FengjieMask" destination="Ezq-kZ-qhD" id="Kzn-3A-1zb"/>
-                        <outlet property="uploadBtn" destination="6Jf-2u-Vay" id="WQn-Tr-33E"/>
+                        <outlet property="FengjieMask" destination="Ezq-kZ-qhD" id="5mu-6x-JWO"/>
+                        <outlet property="uploadBtn" destination="6Jf-2u-Vay" id="E8R-uG-GYh"/>
+                        <segue destination="PAn-Ub-AgR" kind="show" identifier="toGoogleTest" id="f3d-ov-ygi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stN-ZO-KoY" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1082" y="22"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gqQ-Ji-7xz">
+            <objects>
+                <viewController id="PAn-Ub-AgR" customClass="GTViewController" customModule="BookMark" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aqu-XI-egw"/>
+                        <viewControllerLayoutGuide type="bottom" id="HWg-zN-g1N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YCi-7a-xcR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jx1-ic-Ac3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="21"/>
         </scene>
     </scenes>
     <resources>
